@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ProjectController as AdminProjectsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/projects', [AdminProjectsController::class, 'index'])->name('admin.projects.index');
+Route::get('/projects/{project}', [AdminProjectsController::class, 'show'])->name('admin.projects.show'); //visualizzo 1 elemento

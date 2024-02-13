@@ -17,7 +17,7 @@ class ProjectSeeder extends Seeder
         $projects = array(
             array(
                 "title" => "Vue-Boolzapp",
-                "img_url" => "https://i.imgur.com/J9Nm6w7.jpg",
+                "img_url" => "https://www.grazia.it/content/uploads/2023/09/canali-whatsapp.jpg",
                 "date" => "2023-05-12",
                 "description" => "Realizzare l'esercizio Vue Boolzapp usando Vue 3 come visto finora a lezione."
             ),

@@ -1,14 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
+@section ('title', 'Dashboard')
 
 @section('main-content')
 <section class="container">
     <div class="text-white pt-3 text-center">
         
-        
     </div>
     <div class="row">
-        <div class="col3">
-            <ul class="d-flex flex-wrap">
+        <div class="col6">
+            <ul class="d-flex flex-wrap list-unstyled">
                 @forelse ($projects as $project)
                 <li class="me-3 mb-3">
                     <div class="card" style="width: 18rem;">

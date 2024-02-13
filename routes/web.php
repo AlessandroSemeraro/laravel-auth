@@ -18,8 +18,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/projects', [AdminProjectsController::class, 'index'])->name('admin.projects.index');
-Route::get('/projects/{project}', [AdminProjectsController::class, 'show'])->name('admin.projects.show'); //visualizzo 1 elemento
+Route::middleware('auth')
+    ->name('admin.')
+    ->prefix('admin')
+    ->group(function() {
+
+    Route::get('/projects', [AdminProjectsController::class, 'index'])->name('projects.index');
+    Route::get('/projects/create', [AdminProjectsController::class, 'create'])->name('projects.create');
+    Route::post('/projects', [AdminProjectsController::class, 'store'])->name('projects.store');
+    Route::get('/projects/{project}', [AdminProjectsController::class, 'show'])->name('projects.show'); 
+    Route::get('/projects/{project}/edit', [AdminProjectsController::class, 'edit'])->name('projects.edit');
+    Route::put('/projects/{project}', [AdminProjectsController::class, 'update'])->name('projects.update');
+    
+    });

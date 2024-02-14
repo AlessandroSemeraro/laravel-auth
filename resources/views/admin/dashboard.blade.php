@@ -15,7 +15,7 @@
 
             <button class="btn btn-primary mt-2">
                 
-                Vai ai toui Progetti
+                Progetti
             </button>
             </a>
         </div>

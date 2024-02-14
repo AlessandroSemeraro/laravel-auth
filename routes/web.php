@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProjectController as AdminProjectsController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,5 +34,5 @@ Route::middleware('auth')
     Route::get('/projects/{project}', [AdminProjectsController::class, 'show'])->name('projects.show'); 
     Route::get('/projects/{project}/edit', [AdminProjectsController::class, 'edit'])->name('projects.edit');
     Route::put('/projects/{project}', [AdminProjectsController::class, 'update'])->name('projects.update');
-    
+    Route::delete('/projects/{project}', [AdminProjectsController::class, 'delete'])->name('projects.destroy');
     });

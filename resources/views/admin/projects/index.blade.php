@@ -5,6 +5,13 @@
 @section('main-content')
 <section class="container">
     <div class="row">
+        <div class="col12">
+            <a href="{{ route('admin.projects.create') }}" class="text-decoration-none me-2">
+                <button class="btn btn-lg btn-dark mb-4">
+                    Create
+                </button>
+            </a>
+        </div>
         <div class="col6">
             <ul class="d-flex flex-wrap list-unstyled">
                 @forelse ($projects as $project)
